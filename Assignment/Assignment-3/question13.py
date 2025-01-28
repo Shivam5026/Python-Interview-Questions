@@ -6,10 +6,10 @@ def encode_string(string, shift):
     for char in string:
         if char.isalpha():
             base = ord('A') if char.isupper() else ord('a')
-            encoded_char = chr((ord(char) - base + shift) % + base)
+            encoded_char = chr((ord(char) - base + shift) % 26 + base)
         else:
             encoded_char = char
-            encode_string += encoded_char
+        encode_string += encoded_char
     return encode_string
 
 string = input("Enter the string to encode: ")
